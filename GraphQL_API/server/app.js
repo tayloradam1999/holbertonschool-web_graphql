@@ -6,6 +6,9 @@ const Mongoose = require('mongoose');
 const uri = "mongodb+srv://tayloradam1999:papabless217489@cluster0.hptjf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 // const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const app = express();
+const cors = require('cors');
+// allow cross-origin requests
+app.use(cors());
 
 // (async () => {
 // 	try {
