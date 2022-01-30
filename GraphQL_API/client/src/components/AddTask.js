@@ -5,7 +5,7 @@
 import { graphql } from 'react-apollo';
 // import { render } from "react-dom";
 import { Component } from "react";
-import { flowRight as compose } from 'lodash';
+// import { flowRight as compose } from 'lodash';
 // query that gets all project id and titles
 import { getProjectsQuery } from '../queries/queries';
 
@@ -81,6 +81,8 @@ class AddTask extends Component {
 	}
 }
 
-export default compose(
-	graphql(getProjectsQuery, { name: "getProjectsQuery" })
-)(AddTask);
+// export default compose(
+// 	graphql(getProjectsQuery, { name: "getProjectsQuery" })
+// )(AddTask);
+
+export default graphql(getProjectsQuery)(AddTask);

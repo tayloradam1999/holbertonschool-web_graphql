@@ -10,7 +10,7 @@ class TaskList extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			selectedTask: null
+			// selectedTask: null
 		}
 	}
 
