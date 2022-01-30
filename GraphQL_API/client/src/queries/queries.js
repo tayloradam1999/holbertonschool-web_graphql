@@ -22,4 +22,26 @@ const getTasksQuery = gql`
   }
 `
 
-export { getProjectsQuery, getTasksQuery };
+const getTaskQuery = gql`
+  query($id: ID) {
+    task(id:$id) {
+      id
+      title
+      weight
+      description
+      project{
+        id
+        title
+        weight
+        description
+        tasks{
+          title
+          id
+          weight
+        }
+      }
+    }
+  }
+`
+
+export {getProjectsQuery, getTasksQuery, getTaskQuery};

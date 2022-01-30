@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import graphql from 'graphql-tag';
+import { graphql } from 'react-apollo';
 import TaskDetails from './TaskDetails';
 // query that takes id and title of all tasks and returns them
 import { getTasksQuery } from '../queries/queries';
@@ -11,7 +11,7 @@ class TaskList extends Component {
 		super(props);
 		this.state = {
 			selectedTask: null
-		};
+		}
 	}
 
 	// takes data from query and maps it to a return of li tags
@@ -37,7 +37,7 @@ class TaskList extends Component {
 		return(
 			<div>
 				<ul id="task-list">
-					{ this.displaTasks() }
+					{ this.displayTasks() }
 				</ul>
 				<TaskDetails taskId={ this.state.selectedTask }/>
 			</div>

@@ -2,7 +2,7 @@
 // 	useState,
 // 	//useEffect
 // } from "react";
-import graphql from 'graphql-tag';
+import { graphql } from 'react-apollo';
 // import { render } from "react-dom";
 import { Component } from "react";
 import { flowRight as compose } from 'lodash';
@@ -45,10 +45,9 @@ class AddTask extends Component {
 				} > {
 					project.title
 				} </option>);
-			})
+			});
 		}
 	}
-
 
 	render() {
 		return (

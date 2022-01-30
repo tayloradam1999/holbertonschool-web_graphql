@@ -1,13 +1,25 @@
-function TaskDetails(props) {
-  console.log(props);
+import { Component } from 'react';
+import { graphql } from 'react-apollo';
+import { getTaskQuery } from '../queries/queries';
 
+class TaskDetails extends Component {
+    render() {
+        return(
+            <div>
+                <div id='task-details'>
 
-  return ( <
-    div id = "task-details" >
-    <
-    /
-    div >
-  );
+                </div>
+            </div>
+        );
+    }
 }
+export default graphql(getTaskQuery, {
+    options:(props) => {
+        return {
+            variables: {
+                id: props.taskId
+            }
+        }
+    }
+})(TaskDetails);
 
-export default TaskDetails;

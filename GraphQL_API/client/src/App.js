@@ -9,21 +9,19 @@ const client = new ApolloClient({
 	  uri: 'http://localhost:4000/graphql',
 });
 
-// App component, returns ApolloProvider with client before first div tag
 function App() {
-  return (
-	  // ApolloProvider is a component that provides the client all of the components in the app
-	<ApolloProvider client={client}>
-		<div id="main">
-			<div id="bg">
-			</div>
-			<h1>Holberton school tasks</h1>
-			<TaskList />
-			<AddProject />
-			<AddTask />
-		</div>
-	</ApolloProvider>
+	return (
+	  <ApolloProvider client={client}>
+	  <div id="main">
+		<div id="bg">
+		</div> 
+		<h1>Holberton school tasks</h1> 
+		<TaskList />
+		<AddProject />
+		<AddTask/>
+	  </div>
+	  </ApolloProvider>
 	);
-}
+  }
 
 export default App;
