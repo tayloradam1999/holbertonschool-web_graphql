@@ -32,6 +32,10 @@ class TaskList extends Component {
 		}
 	}
 
+	submitForm(e) {
+		e.preventDefault();
+	}
+
 	// handles rendering of tasks from displayTasks function
 	render() {
 		return(

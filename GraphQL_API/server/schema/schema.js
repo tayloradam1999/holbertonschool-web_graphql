@@ -64,11 +64,11 @@ const RootQuery = new GraphQLObjectType({
 		// two fields: tasks and projects
 		task: {
 			type: TaskType,
-			args: { id: { type: GraphQLString } },
+			args: { id: { type: GraphQLID } },
 			resolve(parent, args) {
 				// returns a single task
 				// return lodash.find(tasks, { id: args.id });
-				return Task.findById(args.id);
+				return Task.findById(id);
 			}
 		},
 		project: {
@@ -103,7 +103,8 @@ const RootQuery = new GraphQLObjectType({
 const TaskType = new GraphQLObjectType({
 	name: 'Task',
 	fields: () => ({
-		id: { type: GraphQLString },
+		id: { type: GraphQLID },
+		projectId: { type: GraphQLID },
 		title: { type: GraphQLString },
 		weight: { type: GraphQLInt },
 		description: { type: GraphQLString },

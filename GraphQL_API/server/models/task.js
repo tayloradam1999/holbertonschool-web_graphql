@@ -6,6 +6,7 @@ const taskSchema = mongoose.Schema({
 	title: String,
 	weight: Number,
 	description: String,
+	projectId: String
 });
 
 // export based on taskSchema

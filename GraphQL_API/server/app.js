@@ -10,6 +10,11 @@ const cors = require('cors');
 // allow cross-origin requests
 app.use(cors());
 
+app.use((req, res, next) => {
+	res.header('Access-Control-Allow-Origin', '*');
+	next();
+  });
+
 // (async () => {
 // 	try {
 // 		await client.connect();

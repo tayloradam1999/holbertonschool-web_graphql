@@ -49,6 +49,10 @@ class AddTask extends Component {
 		}
 	}
 
+	submitForm(e) {
+		e.preventDefault();
+	}
+
 	render() {
 		return (
 			<form className="task" id="add-task" onSubmit={this.submitForm.bind(this)}>
